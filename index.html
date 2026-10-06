@@ -74,6 +74,23 @@
   }
   .button:hover { background: var(--rope-dark); }
 
+  /* Cost */
+  .cost {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    column-gap: clamp(1.25rem, 5vw, 3rem);
+    margin-top: 1.25rem;
+    padding: 1.25rem clamp(1.25rem, 5vw, 3rem) 1.5rem;
+    border-radius: var(--radius);
+    background: var(--chalk);
+  }
+  .cost h2 { grid-column: 1 / -1; font-size: 1.5rem; font-weight: 800; line-height: 1.1; }
+  .free { font: 800 clamp(3.25rem, 12vw, 5.5rem)/1 var(--display); letter-spacing: -0.02em; color: var(--rope-dark); }
+  .cost-notes { max-width: 30rem; }
+  .cost-notes p + p { margin-top: 0.5rem; }
+  .cost .why { grid-column: 1 / -1; max-width: none; }
+
   /* Equipment: collapsible */
   .kit {
     margin-block: 1.25rem clamp(3rem, 8vw, 5rem);
@@ -241,6 +258,9 @@
   @media (max-width: 40rem) {
     :root { --gutter: 2.75rem; }
     body { font-size: 1.0625rem; }
+    .cost { grid-template-columns: 1fr; }
+    .cost h2 { font-size: 1.3rem; }
+    .cost-notes { margin-top: 0.5rem; }
     .hero { grid-template-columns: 1fr 36%; grid-template-areas: "title photo" "lede lede" "book book"; }
     .hero-text { display: contents; }
     .hero h1 { grid-area: title; max-width: none; font-size: clamp(1.6rem, 8vw, 2.5rem); }
@@ -279,6 +299,21 @@
 </header>
 
 <main class="wrap">
+  <section class="cost">
+    <h2>Cost</h2>
+    <p class="free">FREE</p>
+    <div class="cost-notes">
+      <p>You're responsible for transport to and from the crag, for both you and your instructor (Bolt, for example).</p>
+      <p><strong>Meeting point:</strong> usually Crashpad.</p>
+    </div>
+    <details class="gear why">
+      <summary>Why is it free?</summary>
+      <div class="gear-body">
+        <p>I'm an instructor in training, so I want to attract clients and gain experience. It won't be free forever, so get it while you can!</p>
+      </div>
+    </details>
+  </section>
+
   <details class="kit">
     <summary>
       <span class="kit-title">Equipment you need</span>
