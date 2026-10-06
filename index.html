@@ -52,6 +52,7 @@
     color: var(--paper);
   }
   .hero-photo { display: block; width: clamp(11rem, 24vw, 15rem); height: auto; aspect-ratio: 3 / 4; object-fit: cover; object-position: 50% 80%; border-radius: 0.9rem; }
+  .avail { margin-top: 1rem; font-size: 1.25rem; font-weight: 700; color: var(--stone); }
   .hero .button { background: var(--stone); color: var(--ink); }
   .hero .button:hover { background: var(--paper); }
   .hero :focus-visible { outline-color: var(--stone); }
@@ -262,7 +263,8 @@
     .cost { grid-template-columns: 1fr; }
     .cost h2 { font-size: 1.3rem; }
     .cost-notes { margin-top: 0.5rem; }
-    .hero { grid-template-columns: 1fr 36%; grid-template-areas: "title photo" "lede lede" "book book"; }
+    .hero { grid-template-columns: 1fr 36%; grid-template-areas: "title photo" "lede lede" "avail avail" "book book"; }
+    .avail { grid-area: avail; margin-top: 0; font-size: 1.125rem; }
     .hero-text { display: contents; }
     .hero h1 { grid-area: title; max-width: none; font-size: clamp(1.6rem, 8vw, 2.5rem); }
     .hero-photo { grid-area: photo; width: 100%; }
@@ -297,6 +299,7 @@
   <div class="hero-text">
     <h1>Climb real rock in Malta</h1>
     <p class="lede">Outdoor climbing sessions with Edward Martin, an SSPI in-training instructor. Each session builds on the one before, so start wherever your skills are.</p>
+    <p class="avail">Available weekends only.</p>
     <a class="button" href="#book">Book a session</a>
   </div>
   <img class="hero-photo" width="960" height="1275" alt="A climber on a rope nears the top of a limestone sea cliff in Malta, with a rock arch and clear blue water far below." src="images/philipp.jpeg">
